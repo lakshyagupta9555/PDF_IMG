@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}PDF & Image Tools{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <style>
+        html.dark { color-scheme: dark; }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 min-h-screen">
+    <nav class="bg-gray-800 border-b border-gray-700 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex justify-between items-center">
+                <a href="{% url 'index' %}" class="text-2xl font-bold text-blue-400 hover:text-blue-300">
+                    PDF & Image Tools
+                </a>
+                <div class="flex gap-4">
+                    <a href="{% url 'pdf' %}" class="text-gray-300 hover:text-blue-400 transition">PDF Tools</a>
+                    <a href="{% url 'images' %}" class="text-gray-300 hover:text-blue-400 transition">Image Tools</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    {% block content %}{% endblock %}
+
+    <footer class="bg-gray-800 border-t border-gray-700 mt-12 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400">
+            <p>&copy; 2025 PDF & Image Tools. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
