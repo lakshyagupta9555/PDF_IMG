@@ -25,7 +25,12 @@ SECRET_KEY = 'django-insecure-y=q59fy8q4f4sh++-s0g=y=l)e4lu-wg3yko@0j!oj4k&_7am1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    ".onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
+
 
 
 # Application definition
@@ -125,3 +130,8 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://pdf-img-ec7n.onrender.com",
+]
+
